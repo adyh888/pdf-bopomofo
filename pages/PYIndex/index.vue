@@ -3,15 +3,20 @@
     <view id="pdfDom" style="padding-top: 15rpx;display: flex;width: 100vw;flex-wrap: wrap;padding-left: 8rpx;">
       <block v-if="txtPY.length > 0">
         <view style="margin-left: 10rpx;height: 100rpx;"  v-for="(item,index) in txtPY" :key="index">
-          <view style="display: flex;justify-content: center;">{{item}}</view>
-          <view style="display: flex;justify-content: center">
-            <view>
-              <view id="red"></view>
-              <view id="blue"></view>
-              <view id="green"></view>
-              <view id="grey"></view>
+          <block v-if="item === '。'">
+            <view style="margin-left: 20rpx"></view>
+          </block>
+          <block v-else>
+            <view style="display: flex;justify-content: center;">{{item}}</view>
+            <view style="display: flex;justify-content: center">
+              <view>
+                <view id="red"></view>
+                <view id="blue"></view>
+                <view id="green"></view>
+                <view id="grey"></view>
+              </view>
             </view>
-          </view>
+          </block>
         </view>
       </block>
       <block v-else>
